@@ -6,8 +6,6 @@ This script is meant to be used with PHP running on an **Apache** web server. It
 
 Tested with _PHP 8.1.3_.
 
-## Configuration
-
 ## Usage
 
 Before uploading the script to your web server document directory, you may want to customize the configuration section. In particular, you should definitely **change the authentication credentials** and use a strong password.
