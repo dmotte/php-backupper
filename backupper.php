@@ -1,7 +1,7 @@
 <?php
 
 /**
- * php-backupper v1.0
+ * php-backupper v1.1
  * by dmotte
  * https://github.com/dmotte/php-backupper
  */
@@ -59,6 +59,8 @@ $htaorig_file_path = $cfg['src_dir'] . DIRECTORY_SEPARATOR .
 // Make sure the script can handle large directories
 ini_set('max_execution_time', 600); // 10 minutes
 ini_set('memory_limit', '1024M'); // 1 GB
+
+header('Content-Type: text/plain');
 
 // Basic authentication
 if (
