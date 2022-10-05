@@ -34,15 +34,14 @@ function diemsg(string $msg, int $response_code = 500)
 
 $script_basename = basename(__FILE__);
 
-$maint_file_path = $cfg['src_dir'] . DIRECTORY_SEPARATOR .
-    $cfg['maint_file_name'];
+$maint_file_path = $cfg['src_dir'] . '/' . $cfg['maint_file_name'];
 $maint_file_content = <<<HEREDOC
 <?php http_response_code(503); ?>
 <h1>Website under maintenance</h1>
 It will be back shortly.
 HEREDOC;
 
-$hta_file_path = $cfg['src_dir'] . DIRECTORY_SEPARATOR . '.htaccess';
+$hta_file_path = $cfg['src_dir'] . '/' . '.htaccess';
 $hta_file_content = <<<HEREDOC
 RewriteEngine On
 RewriteCond %{REQUEST_URI} !/$script_basename$
@@ -53,8 +52,7 @@ if (str_contains(PHP_SAPI, 'cgi')) // If PHP is running under CGI/FastCGI
     $hta_file_content .= PHP_EOL .
         'SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0';
 
-$htaorig_file_path = $cfg['src_dir'] . DIRECTORY_SEPARATOR .
-    $cfg['htaorig_file_name'];
+$htaorig_file_path = $cfg['src_dir'] . '/' . $cfg['htaorig_file_name'];
 
 // Make sure the script can handle large directories
 ini_set('max_execution_time', 600); // 10 minutes

@@ -29,3 +29,5 @@ As stated [here](https://www.php.net/manual/en/features.http-auth.php#114877), i
 ```
 SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
 ```
+
+:warning: Unfortunately, when using `$cfg['arch_format'] = 'zip'`, the compression method is "**store**", so there's no compression at all.
