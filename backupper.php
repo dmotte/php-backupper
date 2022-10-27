@@ -1,14 +1,14 @@
 <?php
 
 /**
- * php-backupper v1.1
+ * php-backupper v1.1.1
  * by dmotte
  * https://github.com/dmotte/php-backupper
  */
 
 //////////////////// BEGIN CONFIGURATION ////////////////////
 
-$cfg = array();
+$cfg = [];
 
 $cfg['auth_username'] = 'admin';
 $cfg['auth_password'] = 'changeme';
@@ -21,11 +21,6 @@ $cfg['htaorig_file_name'] = '.htaccess.original';
 
 //////////////////// END CONFIGURATION ////////////////////
 
-/**
- * Dies with a message and a custom response code
- * @param string $msg Message
- * @param int $response_code Response code
- */
 function diemsg(string $msg, int $response_code = 500)
 {
     http_response_code($response_code);
